@@ -1,0 +1,18 @@
+set cmd [lrange $argv 1 end]
+set pwdfile [lindex $argv 0]
+set prompt "#|%|>|\\\$ $"
+
+set fileId [open $pwdfile r]
+set password [read $fileId]
+close $fileId
+
+eval spawn $cmd
+expect {
+        "(yes/no)"  {send "yes\r";exp_continue}
+        "password:" {send "password\r";exp_continue}
+        "Could not request local forwarding." {exit 255}
+        -re $prompt
+        eof
+}
+# interact
+exit 0

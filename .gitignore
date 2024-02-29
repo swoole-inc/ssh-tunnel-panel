@@ -1,0 +1,23 @@
+# Ignore Python compiled files
+*.pyc
+__pycache__/
+
+# Ignore build and dist folders for PyPI
+/build/
+/dist/
+/*.egg-info/
+
+# Ignore compiled translation files
+/locale/
+
+# Ignore backup files
+*.ui~
+*.glade~
+\#*.glade#
+\#*.ui#
+
+# Ignore PyCharm project folder
+/.idea/
+/vendor
+/config.json
+/composer.lock

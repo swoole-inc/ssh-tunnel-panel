@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    },
+    "files": []
+  },
+  "require": {
+    "ext-pcntl": "*",
+    "swoole/ide-helper": "^5.1"
+  }
+}
